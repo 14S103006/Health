@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:background="#77baff">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:textColor="#ffffff"
+            android:textSize="20dp"
+            android:text="创建病程"/>
+
+        <ImageView
+            android:id="@+id/createprocess_back_img"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:src="@mipmap/left"/>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:layout_marginTop="20dp">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <EditText
+                android:id="@+id/create_process_date"
+                android:layout_width="260dp"
+                android:layout_height="50dp"
+                android:background="@android:drawable/edit_text"
+                android:text="2015-01-01"/>
+
+            <ImageView
+                android:id="@+id/create_process_datepicker"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_alignRight="@id/create_process_date"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="5dp"
+                android:onClick="true"
+                android:src="@mipmap/date1"/>
+            <Spinner
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                android:id="@+id/spinner"
+                android:layout_toRightOf="@id/create_process_date"
+                />
+        </RelativeLayout>
+
+    </LinearLayout>
+    <DatePicker
+        android:id="@+id/datepicker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:visibility="gone">
+        </DatePicker>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <EditText
+            android:inputType="textMultiLine"
+            android:layout_width="360dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
+            android:layout_height="wrap_content"
+
+            android:background="@android:drawable/edit_text"
+            android:minLines="6"/>
+    </LinearLayout>
+
+
+
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@color/NavigationBackground"
+        android:orientation="vertical">
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="#77baff"
+        android:padding="10dp">
+        <ImageView
+            android:id="@+id/createprocess_photo_img"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_marginLeft="40dp"
+            android:layout_alignParentLeft="true"
+            android:onClick="true"
+            android:src="@mipmap/photo"/>
+
+        <ImageView
+            android:id="@+id/createprocess_album_img"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_marginLeft="123dp"
+            android:layout_alignParentLeft="true"
+            android:onClick="true"
+            android:src="@mipmap/album"/>
+
+        <ImageView
+            android:id="@+id/createprocess_video_img"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_marginRight="123dp"
+            android:layout_alignParentRight="true"
+            android:onClick="true"
+            android:src="@mipmap/video"/>
+
+        <ImageView
+            android:id="@+id/createprocess_talk_img"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_marginRight="40dp"
+            android:layout_alignParentRight="true"
+            android:onClick="true"
+            android:src="@mipmap/talk"/>
+
+
+    </RelativeLayout>
+
+</LinearLayout>

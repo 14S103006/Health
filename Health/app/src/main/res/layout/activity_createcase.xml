@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:orientation="vertical">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:background="#77baff">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:textColor="#ffffff"
+            android:textSize="20dp"
+            android:text="全部病例"/>
+        <ImageView
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_alignParentRight="true"
+            android:src="@mipmap/xia"
+            />
+
+        <ImageView
+            android:id="@+id/create_case_back"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_alignParentLeft="false"
+            android:src="@mipmap/left"/>
+    </RelativeLayout>
+
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_weight="1"
+        android:layout_height="wrap_content"
+        android:scrollbars="vertical"
+        android:fadingEdge="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:background="@color/NavigationBackground"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/doctorcase_tag"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:drawableLeft="@mipmap/sm_tag"
+                    android:drawableRight="@mipmap/right"
+                    android:text="    标签"
+                    android:gravity="left|center_vertical"
+                    style="@style/NavigationButton"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="(未填写)"
+                    android:layout_margin="5dp"/>
+
+                <Button
+                    android:id="@+id/doctorcase_info"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:drawableLeft="@mipmap/file"
+                    android:drawableRight="@mipmap/right"
+                    android:text="    患者信息"
+                    android:gravity="left|center_vertical"
+                    style="@style/NavigationButton"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="(未填写)"
+                    android:layout_margin="5dp"/>
+                <Button
+                    android:id="@+id/doctorcase_diag"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:drawableLeft="@mipmap/injection"
+                    android:drawableRight="@mipmap/right"
+                    android:text="    诊断"
+                    android:gravity="left|center_vertical"
+                    style="@style/NavigationButton"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="(未填写)"
+                    android:layout_margin="5dp"/>
+                <Button
+                    android:id="@+id/doctorcase_condition"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:drawableLeft="@mipmap/pill"
+                    android:drawableRight="@mipmap/right"
+                    android:text="    基本病情"
+                    android:gravity="left|center_vertical"
+                    style="@style/NavigationButton"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="(未填写)"
+                    android:layout_margin="5dp"/>
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:drawableLeft="@mipmap/process"
+                    android:text="    病程"
+                    android:gravity="left|center_vertical"
+                    style="@style/NavigationButton"/>
+                <ImageView
+                    android:id="@+id/createcase_show"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+
+                <ImageView
+                    android:id="@+id/doctorcase_addprocess"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:onClick="true"
+                    android:src="@mipmap/add"/>
+
+            </LinearLayout>
+
+
+    </ScrollView>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="#77baff"
+            android:gravity="bottom"
+            android:padding="10dp">
+            <ImageView
+                android:id="@+id/createcase_home_img"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_marginLeft="40dp"
+                android:layout_alignParentLeft="true"
+                android:onClick="true"
+                android:src="@mipmap/home"/>
+
+            <ImageView
+                android:id="@+id/createcase_case_img"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_marginLeft="123dp"
+                android:layout_alignParentLeft="true"
+                android:onClick="true"
+                android:src="@mipmap/caseinfo"/>
+
+            <ImageView
+                android:id="@+id/createcase_heart_img"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_marginRight="123dp"
+                android:layout_alignParentRight="true"
+                android:onClick="true"
+                android:src="@mipmap/heart"/>
+
+            <ImageView
+                android:id="@+id/createcase_me_img"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_marginRight="40dp"
+                android:layout_alignParentRight="true"
+
+                android:onClick="true"
+                android:src="@mipmap/me"/>
+
+
+        </RelativeLayout>
+
+
+
+
+
+</LinearLayout>

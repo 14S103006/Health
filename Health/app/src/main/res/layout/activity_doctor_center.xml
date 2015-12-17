@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:background="#77baff">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:textColor="#ffffff"
+            android:textSize="20dp"
+            android:text="医生个人中心"/>
+        <ImageView
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_alignParentRight="true"
+            android:src="@mipmap/setting"
+            />
+
+        <ImageView
+            android:id="@+id/doctorcenter_back_img"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:src="@mipmap/left"/>
+    </RelativeLayout>
+
+
+    <LinearLayout
+        android:id="@+id/login_layout_image"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center"
+        android:orientation="vertical">
+        <ImageView
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_gravity="center_horizontal"
+            android:src="@mipmap/wxz"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:text="用户名："/>
+            <EditText
+                android:id="@+id/doctor_username"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:text="手机号："/>
+            <EditText
+                android:id="@+id/doctor_photo"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:text="邮    箱："/>
+            <EditText
+                android:id="@+id/doctor_email"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:text="医    院："/>
+            <EditText
+                android:id="@+id/doctor_hospital"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:text="科    室："/>
+            <EditText
+                android:id="@+id/doctotr_office"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:text="职    称："/>
+            <EditText
+                android:id="@+id/doctor_duty"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginTop="5dp"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/login_btn"
+                android:layout_width="150dp"
+                android:layout_margin="5dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/button"
+                android:textColor="#ffffff"
+                android:text="提  交"
+                android:textSize="18dp" />
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="#77baff"
+        android:padding="10dp">
+
+        <ImageView
+            android:id="@+id/cooperate_home_img"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_marginLeft="40dp"
+            android:layout_alignParentLeft="true"
+            android:onClick="true"
+            android:src="@mipmap/home"/>
+
+        <ImageView
+            android:id="@+id/cooperate_chat_img"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_marginLeft="123dp"
+            android:layout_alignParentLeft="true"
+            android:onClick="true"
+            android:src="@mipmap/huihua"/>
+
+        <ImageView
+            android:id="@+id/doctormain_list_img"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_marginRight="123dp"
+            android:layout_alignParentRight="true"
+            android:onClick="true"
+            android:src="@mipmap/group"/>
+
+        <ImageView
+            android:id="@+id/doctormain_me_img"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_marginRight="40dp"
+            android:layout_alignParentRight="true"
+            android:onClick="true"
+            android:src="@mipmap/me"/>
+
+
+    </RelativeLayout>
+
+</LinearLayout>

@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:background="#77baff">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:textColor="#ffffff"
+            android:textSize="20dp"
+            android:text="医生1"/>
+        <ImageView
+            android:id="@+id/cooperate_add_img"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_alignParentRight="true"
+            android:src="@mipmap/caseinfo"
+            />
+
+        <ImageView
+            android:id="@+id/chat_back_img"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:src="@mipmap/left"/>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@color/NavigationBackground"
+        android:orientation="vertical">
+
+    </LinearLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="#77baff"
+        android:padding="10dp">
+
+        <ImageView
+            android:id="@+id/chat_talk"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_alignParentLeft="true"
+            android:onClick="true"
+            android:src="@mipmap/talk"/>
+
+        <EditText
+            android:layout_marginLeft="55dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="55dp"
+            android:background="@android:drawable/edit_text"/>
+
+        <ImageView
+            android:id="@+id/chat_add"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_alignParentRight="true"
+            android:onClick="true"
+            android:src="@mipmap/add"/>
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/chat_line1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/process_album"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_centerInParent="true"
+
+            android:onClick="true"
+            android:src="@mipmap/album"/>
+
+
+        <ImageView
+            android:id="@+id/process_photo"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_toLeftOf="@id/process_album"
+            android:layout_alignTop="@id/process_album"
+            android:layout_marginRight="50dp"
+            android:onClick="true"
+            android:src="@mipmap/photo"/>
+
+
+        <ImageView
+            android:id="@+id/process_text"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_toRightOf="@id/process_album"
+            android:layout_alignTop="@id/process_album"
+            android:layout_marginLeft="50dp"
+            android:onClick="true"
+            android:src="@mipmap/video"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/chat_line2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="170dp"
+            android:textSize="15dp"
+            android:text="相  册" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="60dp"
+            android:layout_marginTop="10dp"
+            android:textSize="15dp"
+            android:text="拍  照" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="280dp"
+            android:layout_marginTop="10dp"
+            android:textSize="15dp"
+            android:text="视  频" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+
+        android:id="@+id/chat_line3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/process_shipin"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_centerInParent="true"
+
+            android:onClick="true"
+            android:src="@mipmap/album"/>
+
+
+        <ImageView
+            android:id="@+id/process_yuyin"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_toLeftOf="@id/process_shipin"
+            android:layout_alignTop="@id/process_shipin"
+            android:layout_marginRight="50dp"
+            android:onClick="true"
+            android:src="@mipmap/photo"/>
+
+
+        <ImageView
+            android:id="@+id/process_bingli"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_toRightOf="@id/process_shipin"
+            android:layout_alignTop="@id/process_shipin"
+            android:layout_marginLeft="50dp"
+            android:onClick="true"
+            android:src="@mipmap/video"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/chat_line4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="170dp"
+            android:textSize="15dp"
+            android:text="语  音" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="60dp"
+            android:layout_marginTop="10dp"
+            android:textSize="15dp"
+            android:text="视  频" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="280dp"
+            android:layout_marginTop="10dp"
+            android:textSize="15dp"
+            android:text="病  历" />
+
+    </RelativeLayout>
+</LinearLayout>

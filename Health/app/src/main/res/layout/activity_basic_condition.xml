@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:background="#77baff">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="基本病情"/>
+        <ImageView
+            android:id="@+id/bascondition_back_img"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_alignParentLeft="true"
+            android:onClick="true"
+            android:src="@mipmap/left"/>
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="vertical"
+        android:fadingEdge="vertical">
+
+        <LinearLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="vertical"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:padding="10dp"
+                android:background="#dddddd"
+                android:text="主诉"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/bascondition_zhusu"
+                    android:inputType="textMultiLine"
+                    android:layout_width="match_parent"
+                    android:layout_margin="10dp"
+                    android:layout_height="wrap_content"
+                    android:background="@android:drawable/edit_text"
+                    android:minLines="6"/>
+
+
+                <ImageView
+                    android:id="@+id/bascondition_zhusu_add"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_alignBottom="@id/bascondition_zhusu"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginBottom="10dp"
+                    android:onClick="true"
+                    android:src="@mipmap/add"/>
+                <ImageView
+                    android:id="@+id/bascondition_zhusu_yuyin"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_alignBottom="@id/bascondition_zhusu"
+                    android:layout_marginLeft="55dp"
+                    android:layout_marginBottom="10dp"
+                    android:onClick="true"
+                    android:src="@mipmap/talk"/>
+
+            </RelativeLayout>
+
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:padding="10dp"
+                android:background="#dddddd"
+                android:text="现病史"/>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/bascondition_bingshi"
+                    android:inputType="textMultiLine"
+                    android:layout_width="match_parent"
+                    android:layout_margin="10dp"
+                    android:layout_height="wrap_content"
+                    android:background="@android:drawable/edit_text"
+                    android:minLines="6"/>
+
+
+                <ImageView
+                    android:id="@+id/bascondition_bingshi_add"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_alignBottom="@id/bascondition_bingshi"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginBottom="10dp"
+                    android:onClick="true"
+                    android:src="@mipmap/add"/>
+                <ImageView
+                    android:id="@+id/bascondition_bingshi_yuyin"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_alignBottom="@id/bascondition_bingshi"
+                    android:layout_marginLeft="55dp"
+                    android:layout_marginBottom="10dp"
+                    android:onClick="true"
+                    android:src="@mipmap/talk"/>
+
+            </RelativeLayout>
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:padding="10dp"
+                android:background="#dddddd"
+                android:text="个人史"/>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/bascondition_geren"
+                    android:inputType="textMultiLine"
+                    android:layout_width="match_parent"
+                    android:layout_margin="10dp"
+                    android:layout_height="wrap_content"
+                    android:background="@android:drawable/edit_text"
+                    android:minLines="6"/>
+
+
+                <ImageView
+                    android:id="@+id/bascondition_geren_add"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_alignBottom="@id/bascondition_geren"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginBottom="10dp"
+                    android:onClick="true"
+                    android:src="@mipmap/add"/>
+                <ImageView
+                    android:id="@+id/bascondition_geren_yuyin"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_alignBottom="@id/bascondition_geren"
+                    android:layout_marginLeft="55dp"
+                    android:layout_marginBottom="10dp"
+                    android:onClick="true"
+                    android:src="@mipmap/talk"/>
+
+            </RelativeLayout>
+
+            <Button
+                android:id="@+id/bascondition_submit"
+                android:layout_gravity="center"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/button"
+                android:textColor="#ffffff"
+                android:text="添加"
+                android:textSize="18sp"
+                android:layout_margin="10dp"/>
+
+
+
+
+        </LinearLayout>
+
+    </ScrollView>
+</LinearLayout>

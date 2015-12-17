@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:background="#77baff">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:textColor="#ffffff"
+            android:textSize="20dp"
+            android:text="设置与帮助"/>
+        <ImageView
+            android:id="@+id/setting_back_img"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_alignParentLeft="true"
+            android:src="@mipmap/left"/>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@color/NavigationBackground"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/personal_setting"
+            android:text="消息通知"
+            style="@style/NavigationButton"/>
+
+        <Button
+            android:text="为...打分"
+            style="@style/NavigationButton"/>
+        <Button
+            android:text="帮助"
+            style="@style/NavigationButton"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            android:textSize="18sp"
+            android:text="当前版本：1.1.1"/>
+
+    </LinearLayout>
+
+
+
+
+
+</LinearLayout>

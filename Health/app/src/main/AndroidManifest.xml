@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.wangxuefei.health" >
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"></uses-permission>
+
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" android:required="false" />
+
+
+    <application
+        android:name=".HealthApp"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/Theme.AppCompat.Light.NoActionBar" >
+        <activity
+            android:name=".WelcomeActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+
+        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".RegisterActivity"></activity>
+        <activity android:name=".UserActivity"></activity>
+        <activity android:name=".PersonalCenterActivity"></activity>
+        <activity android:name=".SettingHelpActivty"></activity>
+        <activity android:name=".FeedbackActivity"></activity>
+        <activity android:name=".PersonalInfoActivity"></activity>
+        <activity android:name=".SignsdataActivity"></activity>
+        <activity android:name=".DiagnoseInfoActivity"></activity>
+        <activity android:name=".DetailDiagInfoActivity"></activity>
+        <activity android:name=".JudgediagActivity"></activity>
+        <activity android:name=".DoctorMainActivity"></activity>
+        <activity android:name=".CreateCaseActivity"></activity>
+        <activity android:name=".CooperateActivity"></activity>
+        <activity android:name=".DoctorCenterActivity"></activity>
+        <activity android:name=".TagActivity"></activity>
+        <activity android:name=".PatientInfoActivity"></activity>
+        <activity android:name=".DoctorDiagActivity"></activity>
+        <activity android:name=".BasConditionActivity"></activity>
+        <activity android:name=".ProcessActivity"></activity>
+        <activity android:name=".CreateProcessActivity"></activity>
+        <activity android:name=".ChatActivity"></activity>
+
+
+
+    </application>
+
+</manifest>

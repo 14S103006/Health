@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:background="#77baff">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:textColor="#ffffff"
+            android:textSize="20dp"
+            android:text="个人中心"/>
+        <ImageView
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_alignParentRight="true"
+            android:src="@mipmap/light"/>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@color/NavigationBackground"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/personal_setting"
+            android:text="    设置与帮助"
+            style="@style/NavigationButton"/>
+
+        <Button
+            android:id="@+id/personcenter_feedback"
+            android:text="    意见反馈"
+            style="@style/NavigationButton"/>
+        <Button
+            android:id="@+id/personcenter_info"
+            android:text="    个人基本信息"
+            style="@style/NavigationButton"/>
+
+    </LinearLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="#77baff"
+        android:padding="10dp">
+        <ImageView
+            android:id="@+id/personcenter_home_img"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_marginLeft="30dp"
+            android:layout_alignParentLeft="true"
+            android:src="@mipmap/home"/>
+        <ImageView
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_marginRight="30dp"
+            android:layout_alignParentRight="true"
+            android:onClick="true"
+            android:src="@mipmap/me"/>
+
+
+    </RelativeLayout>
+
+
+
+</LinearLayout>

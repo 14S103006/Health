@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:background="#77baff">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:textColor="#ffffff"
+            android:textSize="20dp"
+            android:text="全部病例"/>
+        <ImageView
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_alignParentRight="true"
+            android:src="@mipmap/xia"
+            />
+
+        <ImageView
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+
+            android:src="@mipmap/search"/>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/create_case"
+            android:layout_width="0dp"
+            android:layout_height="35dp"
+            android:layout_weight="5"
+            android:text="新建病历"/>
+        <ImageView
+            android:id="@+id/doctormain_takephoto"
+            android:layout_width="0dp"
+            android:layout_height="35dp"
+            android:layout_weight="2"
+            android:layout_marginLeft="5dp"
+            android:background="#dddddd"
+            android:layout_alignParentRight="true"
+            android:onClick="true"
+            android:src="@mipmap/photo2"/>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@color/NavigationBackground"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/personal_setting"
+            android:text="    姓名    2015/01/01"
+            style="@style/NavigationButton"/>
+
+        <Button
+            android:id="@+id/personcenter_feedback"
+            android:text="    姓名    2015/09/20"
+            style="@style/NavigationButton"/>
+        <Button
+            android:id="@+id/personcenter_info"
+            android:text="    姓名    2015/12/20"
+            style="@style/NavigationButton"/>
+
+        <ImageView
+            android:id="@+id/doctormain_showpicture"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </LinearLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="#77baff"
+        android:padding="10dp">
+        <ImageView
+            android:id="@+id/doctormain_home_img"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_marginLeft="40dp"
+            android:layout_alignParentLeft="true"
+            android:onClick="true"
+            android:src="@mipmap/home"/>
+
+        <ImageView
+            android:id="@+id/doctormain_case_img"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_marginLeft="123dp"
+            android:layout_alignParentLeft="true"
+            android:onClick="true"
+            android:src="@mipmap/caseinfo"/>
+
+        <ImageView
+            android:id="@+id/doctormain_heart_img"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_marginRight="123dp"
+            android:layout_alignParentRight="true"
+            android:onClick="true"
+            android:src="@mipmap/heart"/>
+
+        <ImageView
+            android:id="@+id/doctormain_personal"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_marginRight="40dp"
+            android:layout_alignParentRight="true"
+            android:onClick="true"
+            android:src="@mipmap/me"/>
+
+
+    </RelativeLayout>
+
+</LinearLayout>

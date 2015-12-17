@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:background="#77baff">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:textColor="#ffffff"
+        android:textSize="20dp"
+        android:text="详细诊疗信息"/>
+    <ImageView
+        android:id="@+id/detaildiaginfo_back_img"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_alignParentLeft="true"
+        android:src="@mipmap/left"/>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/NavigationBackground"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/information"
+            android:text="主诉"
+            style="@style/NavigationButton"/>
+
+        <Button
+            android:text="诊断"
+            style="@style/NavigationButton"/>
+
+        <Button
+            android:text="医嘱"
+            style="@style/NavigationButton"/>
+
+        <Button
+            android:id="@+id/judge"
+            android:text="评价"
+            style="@style/NavigationButton"/>
+
+    </LinearLayout>
+
+</LinearLayout>
