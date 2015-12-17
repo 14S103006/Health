@@ -107,11 +107,6 @@ public class MainActivity extends AppCompatActivity{
             return;
         }
 
-        if (!login_username.getText().toString().equals("wangxuzhu") && !login_password.getText().toString().equals("123456") ){
-            AppMsg.makeText(MainActivity.this,"用户名或者密码错误！",AppMsg.STYLE_ALERT).show();
-            return;
-        }
-
 
 
         Intent intent;
