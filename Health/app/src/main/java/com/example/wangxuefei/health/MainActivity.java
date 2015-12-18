@@ -8,6 +8,7 @@ import android.text.Selection;
 import android.text.Spannable;
 import android.text.method.HideReturnsTransformationMethod;
 import android.text.method.PasswordTransformationMethod;
+import android.util.JsonReader;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -27,8 +28,12 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.devspark.appmsg.AppMsg;
+import com.example.wangxuefei.health.Bean.User;
 
 import org.apache.http.HttpResponse;
+import org.json.JSONException;
+import org.json.JSONObject;
+import org.json.JSONStringer;
 
 import java.io.OutputStream;
 import java.net.HttpURLConnection;
@@ -41,14 +46,23 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class MainActivity extends AppCompatActivity{
+public class MainActivity extends AppCompatActivity implements Response.Listener<String>,Response.ErrorListener {
 
-    @Bind(R.id.login_username) EditText login_username;
-    @Bind(R.id.login_password) EditText login_password;
-    @Bind(R.id.login_radio_doctor) RadioButton login_radio_doctor;
-    @Bind(R.id.isRemember) CheckBox isRemember;
+    private static final String TAG = MainActivity.class.getSimpleName();
+
+    @Bind(R.id.login_username)
+    EditText login_username;
+    @Bind(R.id.login_password)
+    EditText login_password;
+    @Bind(R.id.login_radio_doctor)
+    RadioButton login_radio_doctor;
+    @Bind(R.id.isRemember)
+    CheckBox isRemember;
+    int roletype;
     ImageView login_pwdseen;
     RequestQueue requestQueue;
+
+    User appUser = null;
 
     private String FILE = "Health";//用于保存SharedPreferences的文件
     private SharedPreferences shared = null;    //声明一个SharedPreferences
@@ -59,78 +73,32 @@ public class MainActivity extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
-        requestQueue=((HealthApp)getApplication()).getQueue();
+        requestQueue = ((HealthApp) getApplication()).getQueue();
+
+        appUser=((HealthApp) getApplication()).getUser();
 
         shared = getSharedPreferences(FILE, MODE_PRIVATE);
-        rememberUserLoginInfo();
+        loadUserLoginInfo();
     }
 
     /**
-     * 记住用户名密码
+     * 载入记住的用户名密码
      */
-    private void rememberUserLoginInfo() {
+    private void loadUserLoginInfo() {
 
-        boolean isMemory=shared.getBoolean("isMemory", false);
-        if (isMemory){
-            String username= shared.getString("username","");
-            String password= shared.getString("password","");
+        boolean isMemory = shared.getBoolean("isMemory", false);
+        if (isMemory) {
+            String username = shared.getString("username", "");
+            String password = shared.getString("password", "");
             login_username.setText(username);
             login_password.setText(password);
         }
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        int id = item.getItemId();
-
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
-
     /**
-     * 登录逻辑处理
+     * 载入用户名密码
      */
-    @OnClick(R.id.login_btn)
-    public void loginClick(){
-
-        if (login_username.getText().toString().equals("") || login_password.getText().toString().equals("") ){
-            AppMsg.makeText(MainActivity.this,"用户名或者密码不能为空！",AppMsg.STYLE_ALERT).show();
-            return;
-        }
-
-
-
-        Intent intent;
-        if (login_radio_doctor.isChecked()){
-            intent=new Intent(MainActivity.this,DoctorMainActivity.class);
-        }else{
-            intent=new Intent(MainActivity.this,UserActivity.class);
-        }
-        startActivity(intent);
-
-
-
-        MainActivity.this.finish();
-
-        /*   baokang
-        SharedPreferences.Editor editor = shared.edit();
-        editor.putBoolean("isMemory",true);
-        editor.putString("username", login_username.getText().toString());
-        editor.putString("password",login_password.getText().toString());
-        editor.commit();
-        */
-
-        /*  feifei edit  */
-
+    private void rememberUserLoginInfo() {
         if (isRemember.isChecked()) {
             if (shared == null) {
                 shared = getSharedPreferences(FILE, MODE_PRIVATE);
@@ -138,7 +106,7 @@ public class MainActivity extends AppCompatActivity{
             SharedPreferences.Editor editor = shared.edit();
             editor.putBoolean("isMemory", true);
             editor.putString("username", login_username.getText().toString());
-            editor.putString("password",login_password.getText().toString());
+            editor.putString("password", login_password.getText().toString());
             editor.commit();
         } else if (!isRemember.isChecked()) {
             if (shared == null) {
@@ -148,69 +116,57 @@ public class MainActivity extends AppCompatActivity{
             edit.putBoolean("isMemory", false);
             edit.commit();
         }
+    }
 
 
-        /*
-
-        final int roletype;
-        if (login_radio_doctor.isChecked()){
-            roletype=2;
-        }else {
-            roletype=1;
+    /**
+     * 登录逻辑处理
+     */
+    @OnClick(R.id.login_button)
+    public void loginClick() {
+        if (login_username.getText().toString().equals("") || login_password.getText().toString().equals("")) {
+            AppMsg.makeText(MainActivity.this, "用户名或者密码不能为空！", AppMsg.STYLE_ALERT).show();
+            return;
         }
+        if (login_radio_doctor.isChecked()) {
+            roletype = 2;
+        } else {
+            roletype = 1;
+        }
+
         StringRequest request = new StringRequest(
                 Request.Method.POST,
                 "http://192.168.1.98:8080/login",
-                new Response.Listener<String>() {
-                    @Override
-                    public void onResponse(String str) {  //收到成功应答后会触发这里
-                        Intent intent;
-                        if (roletype==1){
-                            intent=new Intent(MainActivity.this,UserActivity.class);
-                        }else{
-                            intent=new Intent(MainActivity.this,DoctorMainActivity.class);
-                        }
-                        startActivity(intent);
-                        MainActivity.this.finish();
-                    }
-                },
-                new Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError volleyError) { //出现连接错误会触发这里
-                        Log.e("TAG",volleyError.getMessage(),volleyError);
-                        AppMsg.makeText(MainActivity.this,"验证失败,用户名或者密码错误！",AppMsg.STYLE_ALERT).show();
-                    }
-                }
-        ){
+                this,this
+        ) {
             @Override
             protected Map<String, String> getParams() throws AuthFailureError {  //设置参数
                 Map<String, String> map = new HashMap<String, String>();
                 map.put("username", login_username.getText().toString());
                 map.put("password", login_password.getText().toString());
-                map.put("roletype", roletype+"");
+                map.put("roletype", roletype + "");
                 return map;
             }
         };
         requestQueue.add(request);
 
-        */
+
     }
 
     /* 注册处理 */
     @OnClick(R.id.login_register_btn)
-    public void registerClick(){
-        Intent intent=new Intent(MainActivity.this,RegisterActivity.class);
+    public void registerClick() {
+        Intent intent = new Intent(MainActivity.this, RegisterActivity.class);
         startActivity(intent);
     }
 
-    boolean isHidden=true;
+    boolean isHidden = true;
+
     @OnClick(R.id.login_pwdseen)
-    public void pwdClick(){
-        if (!isHidden) {
-            //设置EditText文本为可见的
+    public void pwdClick() {
+        if (!isHidden) {//设置EditText文本为可见的
             login_password.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
-        } else {
-            //设置EditText文本为隐藏的
+        } else {//设置EditText文本为隐藏的
             login_password.setTransformationMethod(PasswordTransformationMethod.getInstance());
         }
         isHidden = !isHidden;
@@ -224,4 +180,31 @@ public class MainActivity extends AppCompatActivity{
     }
 
 
+    @Override
+    public void onErrorResponse(VolleyError volleyError) {
+        Log.e(TAG, volleyError.getMessage(), volleyError);
+        AppMsg.makeText(MainActivity.this, "验证失败,用户名或者密码错误！", AppMsg.STYLE_ALERT).show();
+    }
+
+    @Override
+    public void onResponse(String str) {
+        try {
+            JSONObject jsonObject= new JSONObject(str);
+            Log.d(TAG, jsonObject.toString());
+            ((HealthApp) MainActivity.this.getApplication()).setUser(new User().parseJson(jsonObject));
+            Log.d(TAG, "appUser"+appUser.getId());
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        Log.d(TAG, str);
+
+        Intent intent;
+        if (roletype == 1) {
+            intent = new Intent(MainActivity.this, UserActivity.class);
+        } else {
+            intent = new Intent(MainActivity.this, DoctorMainActivity.class);
+        }
+        startActivity(intent);
+        MainActivity.this.finish();
+    }
 }

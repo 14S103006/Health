@@ -16,6 +16,8 @@ public class CooperateActivity extends AppCompatActivity {
     ImageView cooperate_home_img;
     ImageView doctormain_me_img;
 
+    ImageView cooperate_add_img; //添加发送消息按钮
+
     Button chat_1;
 
     @Override
@@ -26,7 +28,8 @@ public class CooperateActivity extends AppCompatActivity {
         cooperate_back_img = (ImageView)findViewById(R.id.cooperate_back_img);
         cooperate_home_img = (ImageView)findViewById(R.id.cooperate_home_img);
         doctormain_me_img = (ImageView)findViewById(R.id.doctormain_me_img);
-        chat_1 = (Button)findViewById(R.id.chat_1);
+        cooperate_add_img=(ImageView)findViewById(R.id.cooperate_add_img);
+
 
         cooperate_back_img.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -50,10 +53,12 @@ public class CooperateActivity extends AppCompatActivity {
             }
         });
 
-        chat_1.setOnClickListener(new View.OnClickListener() {
+
+
+        cooperate_add_img.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(CooperateActivity.this, ChatActivity.class);
+                Intent intent = new Intent(CooperateActivity.this, SendMessageActivity.class);
                 startActivity(intent);
             }
         });
